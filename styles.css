@@ -54,13 +54,20 @@ a {
   transform: translateY(0);
 }
 
+/* Hero */
+
 .site-hero {
   min-height: 92vh;
   padding: 1.25rem clamp(1rem, 4vw, 4rem) 4rem;
   position: relative;
   isolation: isolate;
   background:
-    linear-gradient(90deg, rgba(18, 17, 15, 0.78), rgba(18, 17, 15, 0.42), rgba(18, 17, 15, 0.18)),
+    linear-gradient(
+      90deg,
+      rgba(18, 17, 15, 0.78),
+      rgba(18, 17, 15, 0.42),
+      rgba(18, 17, 15, 0.18)
+    ),
     var(--hero-image) center / cover no-repeat;
   color: #fffaf0;
 }
@@ -163,7 +170,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
   margin-bottom: 0.7rem;
 }
 
@@ -214,6 +221,8 @@ h3 {
   background: #fffaf0;
 }
 
+/* General layout */
+
 .section {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -241,6 +250,8 @@ h3 {
   color: var(--muted);
 }
 
+/* Work */
+
 .work-grid,
 .video-grid {
   display: grid;
@@ -250,8 +261,7 @@ h3 {
 
 .project-card,
 .video-card,
-.embed-panel,
-.contact-section {
+.embed-panel {
   background: rgba(255, 250, 240, 0.76);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -300,7 +310,7 @@ h3 {
 }
 
 .project-body {
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.1rem, 2.5vw, 1.65rem);
 }
 
 .project-body p:last-child,
@@ -317,6 +327,8 @@ h3 {
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
+
+/* Video and website embed */
 
 .panel-section {
   width: 100%;
@@ -366,27 +378,86 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+/* Contact */
+
 .contact-section {
-  text-align: center;
-  padding: clamp(3rem, 6vw, 5rem);
-  margin-bottom: clamp(4rem, 7vw, 7rem);
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto clamp(4rem, 7vw, 7rem);
+  padding: 0;
 }
 
-.contact-section .section-label {
-  justify-content: center;
+.contact-card {
+  background: rgba(255, 250, 240, 0.82);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
 }
 
-.contact-section h2 {
-  max-width: 800px;
-  margin-inline: auto;
+.contact-copy h2 {
   margin-bottom: 1rem;
 }
 
-.contact-section p {
-  max-width: 620px;
-  margin-inline: auto;
-  margin-bottom: 1.5rem;
+.contact-copy p {
+  max-width: 430px;
+  margin-bottom: 0;
 }
+
+.contact-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.contact-list a {
+  display: block;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(36, 34, 30, 0.13);
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.56);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(162, 91, 59, 0.38);
+  background: rgba(255, 255, 255, 0.78);
+  outline: none;
+}
+
+.contact-list a span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-list a strong {
+  display: block;
+  min-width: 0;
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  line-height: 1.35;
+  font-weight: 700;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Footer */
 
 .site-footer {
   width: min(1120px, calc(100% - 2rem));
@@ -408,6 +479,8 @@ h3 {
 .credit {
   max-width: 520px;
 }
+
+/* Responsive */
 
 @media (max-width: 900px) {
   .site-hero {
@@ -447,6 +520,20 @@ h3 {
   .website-embed {
     min-height: 420px;
   }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-copy p {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
@@ -473,5 +560,15 @@ h3 {
 
   .website-embed {
     min-height: 320px;
+  }
+
+  .contact-card {
+    padding: 1.25rem;
+    border-radius: 22px;
+  }
+
+  .contact-list a {
+    padding: 14px 15px;
+    border-radius: 16px;
   }
 }
