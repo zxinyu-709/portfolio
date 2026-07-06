@@ -1,329 +1,669 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Xinyu Zhao Portfolio — media, screen studies, visual design, video editing, WordPress web design, and digital communication projects." />
-  <title>Xinyu Zhao Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#work">Skip to portfolio works</a>
+:root {
+  --bg: #f5f0e6;
+  --surface: #fffaf0;
+  --surface-strong: #efe7d7;
+  --ink: #24221e;
+  --muted: #6e675d;
+  --line: rgba(36, 34, 30, 0.16);
+  --accent: #a25b3b;
+  --accent-dark: #633524;
+  --shadow: 0 24px 60px rgba(36, 34, 30, 0.12);
+  --radius: 28px;
+  --hero-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f2/Auckland_skyline_1.jpg");
+}
 
-  <header class="site-hero" id="top" aria-label="Auckland skyline hero image">
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a class="brand" href="#top">Xinyu Zhao Portfolio</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Works</a>
-        <a href="#video">Video</a>
-        <a href="#web">Web</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+* {
+  box-sizing: border-box;
+}
 
-    <div class="hero-content">
-      <p class="eyebrow">Auckland-based · Media · Visual Communication</p>
-      <h1>Xinyu Zhao Portfolio</h1>
-      <p class="hero-copy">
-        Selected work in visual design, video editing, subtitling, digital presentation, and web-based media projects.
-      </p>
-      <div class="hero-actions" aria-label="Hero actions">
-        <a class="button primary" href="#work">View work</a>
-        <a class="button secondary" href="mailto:j33395362@gmail.com">Email Xinyu</a>
-      </div>
-    </div>
-  </header>
+html {
+  scroll-behavior: smooth;
+}
 
-  <main>
-    <section class="intro section" id="about">
-      <div class="section-label">Profile</div>
-      <div class="intro-grid">
-        <h2>About Me <br /> Xinyu Zhao </h2>
-        <div class="intro-copy">
-          <p>
-            University of Auckland — Master of Arts in Media and Screen Studies <br />
-            University of Malaya — Bachelor of Media and Communication Studies
-          </p>
-          <p>
-            Completed a professional internship at ATD Solution, an IT company specializing in Digital Enterprise Architecture, as a Creative Designer/Producer. Gained hands-on experience in video and audio editing, graphic design, marketing material production, and data organization.
-          </p>
-          <p>
-            Recently worked with ShareBoating as a marketing intern, supporting the Chinese-language website through WordPress and Elementor. The work included vessel pages, About Us, Contact, boat overview content, service information organization, and branded visual support.
-          </p>
-          <p class="tool-line">
-            Tools: Adobe Premiere Pro/Audition/Photoshop/InDesign, Canva, WordPress/Elementor, Topaz Photo/Video AI, Aegisub/SubtitleEdit, and MS Office.
-          </p>
-        </div>
-      </div>
-    </section>
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
 
-    <section class="section compact-section" id="work">
-      <div class="section-heading">
-        <div>
-          <div class="section-label">Selected works</div>
-          <h2>Design and visual projects</h2>
-        </div>
-        <p>Compact selection of visual, layout, and web-based works.</p>
-      </div>
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
 
-      <div class="work-grid compact-grid">
-        <article class="project-card">
-          <figure>
-            <img src="assets/Some_Other_Designs.gif" alt="Sustainable Development Program event visual design" loading="lazy" />
-          </figure>
-          <div class="project-body">
-            <p class="project-type">Event visual</p>
-            <h3>Sustainable Development Program</h3>
-          </div>
-        </article>
+a {
+  color: inherit;
+}
 
-        <article class="project-card">
-          <figure>
-            <img src="assets/gif2.gif" alt="Business Requirement Architecture course information layout" loading="lazy" />
-          </figure>
-          <div class="project-body">
-            <p class="project-type">Course layout</p>
-            <h3>Business Requirement Architecture</h3>
-          </div>
-        </article>
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  transform: translateY(-160%);
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+}
 
-        <article class="project-card">
-          <figure>
-            <img src="assets/ezgif.com-animated-gif-maker.gif" alt="Hiring the Right Enterprise Architects banner design" loading="lazy" />
-          </figure>
-          <div class="project-body">
-            <p class="project-type">Corporate banner</p>
-            <h3>Hiring the Right Enterprise Architects</h3>
-          </div>
-        </article>
+.skip-link:focus {
+  transform: translateY(0);
+}
 
-        <article class="project-card">
-          <figure class="contain-image">
-            <img src="assets/10_bookplate_label.png" alt="The Quiet Index ex libris label design" loading="lazy" />
-          </figure>
-          <div class="project-body">
-            <p class="project-type">Editorial identity</p>
-            <h3>The Quiet Index</h3>
-          </div>
-        </article>
+/* Hero */
 
-        <article class="project-card">
-          <figure class="contain-image">
-            <img src="assets/06_moss_ceramic_hang_tag.png" alt="Moss and Ceramic hang tag design" loading="lazy" />
-          </figure>
-          <div class="project-body">
-            <p class="project-type">Packaging label</p>
-            <h3>Moss &amp; Ceramic</h3>
-          </div>
-        </article>
+.site-hero {
+  min-height: 92vh;
+  padding: 1.25rem clamp(1rem, 4vw, 4rem) 4rem;
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 17, 15, 0.78),
+      rgba(18, 17, 15, 0.42),
+      rgba(18, 17, 15, 0.18)
+    ),
+    var(--hero-image) center / cover no-repeat;
+  color: #fffaf0;
+}
 
-         <article class="project-card">
-          <figure class="contain-image">
-            <img src="assets/Cat.png" alt="Cat, book, coffee, camera, plant, and landscape enamel pin illustration set" loading="lazy" />
-          </figure>
+.site-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  background: linear-gradient(transparent, var(--bg));
+  z-index: -1;
+}
 
-          <div class="project-body">
-            <p class="project-type">Illustration set</p>
-            <h3>Cat &amp; Lifestyle Pin Designs</h3>
-          </div>
-        </article>
-      </div>
-    </section>
+.site-nav {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
 
-    <section class="section panel-section" id="video">
-  <div class="section-heading">
-    <div>
-      <div class="section-label">Video</div>
-      <h2>Screen-based work</h2>
-    </div>
+.brand {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
 
-    <p>Embedded Google Drive videos. Sharing permission should be set to “Anyone with the link can view”.</p>
-  </div>
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
 
-  <div class="video-grid">
-    <article class="video-card">
-      <div class="iframe-wrap">
-        <iframe
-          src="https://drive.google.com/file/d/1euPcvmVpAhNmkhcp7qoIpT_dQGTjpQNq/preview"
-          title="BITAS ASIA CONFERENCE Intro"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: rgba(255, 250, 240, 0.88);
+  padding: 0.55rem 0.75rem;
+  border-radius: 999px;
+}
 
-      <div class="project-body">
-        <p class="project-type">Video editing</p>
-        <h3>BITAS ASIA CONFERENCE Intro</h3>
-        <a class="text-link" href="https://drive.google.com/file/d/1euPcvmVpAhNmkhcp7qoIpT_dQGTjpQNq/view?t=1.987&amp;pli=1" target="_blank" rel="noopener noreferrer">
-          Open video
-        </a>
-      </div>
-    </article>
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: rgba(255, 250, 240, 0.14);
+  color: #fffaf0;
+  outline: none;
+}
 
-    <article class="video-card">
-      <div class="iframe-wrap">
-        <iframe
-          src="https://drive.google.com/file/d/1E-22yeBQE_eaAyLPeweUpZsqHjq-__pu/preview"
-          title="Guide for Local Transport Claim"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
+.hero-content {
+  width: min(1120px, 100%);
+  margin: 15vh auto 0;
+  max-width: 760px;
+}
 
-      <div class="project-body">
-        <p class="project-type">Instructional video</p>
-        <h3>Guide for Local Transport Claim</h3>
-        <a class="text-link" href="https://drive.google.com/file/d/1E-22yeBQE_eaAyLPeweUpZsqHjq-__pu/view" target="_blank" rel="noopener noreferrer">
-          Open video
-        </a>
-      </div>
-    </article>
+.eyebrow,
+.section-label,
+.project-type {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  font-weight: 750;
+}
 
-    <article class="video-card">
-      <div class="iframe-wrap">
-        <iframe
-          src="https://drive.google.com/file/d/13r_GG-W7CIEyv7zthfHprqkROkhXSax0/preview"
-          title="Employee Handbook-V3"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
+.site-hero .eyebrow {
+  color: #f0caa6;
+}
 
-      <div class="project-body">
-        <p class="project-type">Internal training video</p>
-        <h3>Employee Handbook-V3</h3>
-        <a class="text-link" href="https://drive.google.com/file/d/13r_GG-W7CIEyv7zthfHprqkROkhXSax0/view" target="_blank" rel="noopener noreferrer">
-          Open video
-        </a>
-      </div>
-    </article>
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
 
-    <article class="video-card">
-      <div class="iframe-wrap">
-        <iframe
-          src="https://drive.google.com/file/d/1xVw17FnyBMf7i2DRLCPNoG3r46AeiGLf/preview"
-          title="UM-Video Project: Work&Life Balance"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
+h1,
+h2,
+h3 {
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
 
-      <div class="project-body">
-        <p class="project-type">University video project</p>
-        <h3>UM-Video Project: Work&amp;Life Balance</h3>
-        <a class="text-link" href="https://drive.google.com/file/d/1xVw17FnyBMf7i2DRLCPNoG3r46AeiGLf/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-          Open video
-        </a>
-      </div>
-    </article>
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  max-width: 920px;
+  margin-bottom: 1.4rem;
+}
 
-    <article class="video-card">
-      <div class="iframe-wrap">
-        <iframe
-          src="https://drive.google.com/file/d/1YbZyPru-1r1z0FxxSL4DbzstMOoiBSy-/preview"
-          title="ATD Interview video"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin-bottom: 0;
+}
 
-      <div class="project-body">
-        <p class="project-type">Interview video</p>
-        <h3>ATD Interview video</h3>
-        <a class="text-link" href="https://drive.google.com/file/d/1YbZyPru-1r1z0FxxSL4DbzstMOoiBSy-/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-          Open video
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
+h3 {
+  font-size: clamp(1.05rem, 1.45vw, 1.45rem);
+  margin-bottom: 0.55rem;
+}
 
-    <section class="section" id="web">
-      <div class="section-heading">
-        <div>
-          <div class="section-label">Website</div>
-          <h2>WordPress Web Design</h2>
-        </div>
-        <p>Selected screenshots from a Chinese-language WordPress website project for ShareBoating, presenting homepage structure, company information, vessel listings, and detailed boat pages.</p>
-      </div>
+.hero-copy {
+  max-width: 620px;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: rgba(255, 250, 240, 0.84);
+}
 
-      <article class="embed-panel web-showcase-panel">
-        <div class="showcase-intro">
-          <div>
-            <p class="project-type">WordPress / Elementor / Content Design</p>
-            <h3>ShareBoating Chinese Website</h3>
-          </div>
-          <p>
-            Built and organized page content for a marine tourism website, including vessel pages, About Us, Contact, and a boat overview section. The work focused on clear information hierarchy, service presentation, and conversion-friendly page layout for Chinese-speaking audiences.
-          </p>
-        </div>
+.hero-actions,
+.embed-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
 
-        <div class="website-showcase" aria-label="ShareBoating website screenshots">
-          <a class="website-shot website-shot-large" href="assets/shareboating-mainpage.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/shareboating-mainpage.jpg" alt="ShareBoating Chinese website homepage screenshot" loading="lazy" />
-            <span>Homepage</span>
-          </a>
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.75rem 1.05rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 750;
+  border: 1px solid transparent;
+}
 
-          <a class="website-shot" href="assets/shareboating-about-us.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/shareboating-about-us.jpg" alt="ShareBoating About Us page screenshot" loading="lazy" />
-            <span>About Us</span>
-          </a>
+.button.primary {
+  background: var(--accent);
+  color: #fffaf0;
+}
 
-          <a class="website-shot" href="assets/shareboating-boat-list.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/shareboating-boat-list.jpg" alt="ShareBoating boat list page screenshot" loading="lazy" />
-            <span>Boat Overview</span>
-          </a>
+.button.primary:hover,
+.button.primary:focus-visible {
+  background: var(--accent-dark);
+}
 
-          <a class="website-shot" href="assets/shareboating-savoy.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/shareboating-savoy.jpg" alt="ShareBoating Savoy vessel page screenshot" loading="lazy" />
-            <span>Savoy Vessel Page</span>
-          </a>
-        </div>
-      </article>
-    </section>
+.button.secondary {
+  background: rgba(255, 250, 240, 0.78);
+  color: var(--ink);
+  border-color: var(--line);
+}
 
-    <section class="section contact-section" id="contact">
-  <div class="contact-card">
-    <div class="contact-copy">
-      <div class="section-label">Contact</div>
-      <h2>My Contact Info</h2>
-      <p>For recruitment or project enquiries, contact me through either email address, phone, or GitHub Blog.</p>
-    </div>
+.button.secondary:hover,
+.button.secondary:focus-visible {
+  background: #fffaf0;
+}
 
-    <div class="contact-list" aria-label="Contact details">
-      <a href="mailto:j33395362@gmail.com">
-        <span>Personal email</span>
-        <strong>j33395362@gmail.com</strong>
-      </a>
+/* General layout */
 
-      <a href="mailto:zxin709@aucklanduni.ac.nz">
-        <span>University email</span>
-        <strong>zxin709@aucklanduni.ac.nz</strong>
-      </a>
+.section {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(4rem, 7vw, 7rem) 0;
+}
 
-      <a href="tel:+64204388013">
-        <span>Phone</span>
-        <strong>020 438 8013</strong>
-      </a>
+.intro {
+  padding-top: clamp(3rem, 6vw, 6rem);
+}
 
-      <a href="https://github.com/CYBIRD-D" target="_blank" rel="noopener noreferrer">
-        <span>GitHub Blog</span>
-        <strong>github.com/CYBIRD-D</strong>
-      </a>
-    </div>
-  </div>
-</section>
-  </main>
+.intro-grid,
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-bottom: 2rem;
+}
 
-  <footer class="site-footer">
-    <p>© <span id="year">2026</span> Xinyu Zhao Portfolio. Built as a static GitHub Pages site.</p>
-    <p class="credit">Hero image: Auckland skyline, public domain, via Wikimedia Commons.</p>
-  </footer>
-</body>
-</html>
+.intro-copy,
+.section-heading p,
+.contact-section p,
+.project-body p,
+.embed-caption p {
+  color: var(--muted);
+}
+
+.tool-line {
+  font-size: 0.95rem;
+}
+
+/* Works */
+
+.work-grid,
+.video-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.work-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.video-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-card,
+.video-card,
+.embed-panel,
+.website-shot {
+  background: rgba(255, 250, 240, 0.76);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.project-card,
+.video-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card figure,
+.video-card .iframe-wrap,
+.embed-panel .iframe-wrap {
+  margin: 0;
+  background: var(--surface-strong);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-card figure {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.project-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card .contain-image {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(162, 91, 59, 0.08), transparent 34%),
+    var(--surface-strong);
+}
+
+.project-card .contain-image img {
+  object-fit: contain;
+  padding: clamp(0.75rem, 2vw, 1.4rem);
+}
+
+.project-body {
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.project-body p:last-child,
+.embed-caption p:last-child,
+.intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 0.45rem;
+  color: var(--accent-dark);
+  font-weight: 750;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+/* Video and website showcase */
+
+.panel-section {
+  width: 100%;
+  max-width: none;
+  background: #e9e0d0;
+  padding-left: max(1rem, calc((100vw - 1120px) / 2));
+  padding-right: max(1rem, calc((100vw - 1120px) / 2));
+}
+
+.iframe-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.iframe-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.embed-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.website-embed {
+  aspect-ratio: 16 / 9;
+  min-height: 520px;
+}
+
+.embed-caption {
+  justify-content: space-between;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.embed-caption h3,
+.embed-caption p {
+  width: min(680px, 100%);
+  margin-bottom: 0.5rem;
+}
+
+.web-showcase-panel {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.showcase-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(260px, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: end;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(0.75rem, 2vw, 1.25rem) clamp(1.25rem, 3vw, 2rem);
+}
+
+.showcase-intro p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.website-showcase {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1rem;
+}
+
+.website-shot {
+  position: relative;
+  min-height: 260px;
+  text-decoration: none;
+  overflow: hidden;
+  background: var(--surface-strong);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease;
+}
+
+.website-shot:hover,
+.website-shot:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(162, 91, 59, 0.38);
+  outline: none;
+}
+
+.website-shot-large {
+  grid-row: span 3;
+  min-height: 640px;
+}
+
+.website-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.website-shot span {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.92);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(36, 34, 30, 0.14);
+}
+
+/* Contact */
+
+.contact-section {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto clamp(4rem, 7vw, 7rem);
+  padding: 0;
+}
+
+.contact-card {
+  background: rgba(255, 250, 240, 0.82);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.contact-copy h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-copy p {
+  max-width: 430px;
+  margin-bottom: 0;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.contact-list a {
+  display: block;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(36, 34, 30, 0.13);
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.56);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(162, 91, 59, 0.38);
+  background: rgba(255, 255, 255, 0.78);
+  outline: none;
+}
+
+.contact-list a span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-list a strong {
+  display: block;
+  min-width: 0;
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  line-height: 1.35;
+  font-weight: 700;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Footer */
+
+.site-footer {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.credit {
+  max-width: 520px;
+}
+
+/* Responsive */
+
+@media (max-width: 980px) {
+  .work-grid,
+  .video-grid,
+  .website-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .website-shot-large {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 520px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-copy p {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-hero {
+    min-height: 780px;
+  }
+
+  .site-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 10vh;
+  }
+
+  .intro-grid,
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .website-embed {
+    min-height: 420px;
+  }
+
+  .showcase-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .work-grid,
+  .video-grid,
+  .website-showcase,
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .website-shot,
+  .website-shot-large {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-hero {
+    min-height: 700px;
+    padding-bottom: 3rem;
+  }
+
+  .nav-links a {
+    padding: 0.45rem 0.55rem;
+  }
+
+  h1 {
+    font-size: clamp(2.55rem, 15vw, 4.2rem);
+  }
+
+  .project-card figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .website-embed {
+    min-height: 320px;
+  }
+
+  .website-shot,
+  .website-shot-large {
+    min-height: 300px;
+  }
+
+  .web-showcase-panel {
+    padding: 0.8rem;
+  }
+
+  .contact-card {
+    padding: 1.25rem;
+    border-radius: 22px;
+  }
+
+  .contact-list a {
+    padding: 14px 15px;
+    border-radius: 16px;
+  }
+}
